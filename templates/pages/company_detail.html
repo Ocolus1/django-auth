@@ -1,0 +1,35 @@
+{% extends '_base.html' %} 
+
+{% block title %}
+    {{ company.name }}
+{% endblock title %}
+
+
+{% block content %}
+<div class="flex min-h-full flex-col justify-start px-6 py-12 lg:px-8">
+    <div class="mt-1 sm:mx-auto sm:w-full sm:max-w-lg">
+        <div class="flex flex-col mb-3 items-center justify-between sm:flex-row">
+            <h1 class="font-extrabold text-3xl mb-3">{{ company.name }}</h1>
+            <a href="{% url 'pages:company_list' %}" class="bg-indigo-600 p-2 text-white rounded" >Go back</a>
+	    </div>
+        <img src="{{ company.logo.url }}" alt="{{ company.name }} logo" class="h-2/3 w-full border">
+        <div class="flex flex-row items-center justify-start mt-2">
+            Category - {% for category in company.category.all %}
+                <span class="px-2">{{ category }}</span>
+            {% endfor %}
+        </div>
+        <p class="py-2 mt-3">Url - <a href="{{ company.url }}">{{ company.url }}</a></p>
+        <div class="flex flex-row items-center justify-start mt-2">
+            Company stage - {% for stage in company.stage.all %}
+                <span class="px-2">{{ stage }}</span>
+            {% endfor %}
+        </div>
+        <p>Address - {{ company.address }}</p>
+        <p>City -  {{ company.city }}</p>
+        <p>State - {{ company.state }}</p>
+        <p>Zip Code -  {{ company.zip }}</p>
+        <p>Country - {{ company.country }}</p>
+        <p>Phone number -  {{ company.phone }}</p>
+    </div>
+</div>
+{% endblock %}

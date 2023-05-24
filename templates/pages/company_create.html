@@ -1,0 +1,126 @@
+{% extends '_base.html' %} 
+
+{% block title %}Create Company{% endblock title %} 
+
+
+{% block content %}
+<div class="flex min-h-full flex-col justify-center px-6 py-12 lg:px-8">
+    <div class="sm:mx-auto sm:w-full sm:max-w-md">
+        <h2 class="mt-1 text-center text-2xl font-bold leading-9 tracking-tight text-gray-900">Create a New Company</h2>
+    </div>
+    {% if error %}
+        <p class="text-red-500">{{ error }}</p>
+    {% endif %}
+  <div class="mt-1 sm:mx-auto sm:w-full sm:max-w-sm">
+    <form class="space-y-6" enctype="multipart/form-data" method="POST">
+        {% csrf_token %}
+      <div>
+        <label for="name" class="block text-sm font-medium leading-6 text-gray-900">Company Name</label>
+        <div class="mt-2">
+          <input id="name" name="name" type="text" required class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
+        </div>
+      </div>
+
+      <div>
+        <label for="url" class="block text-sm font-medium leading-6 text-gray-900">Company Url</label>
+        <div class="mt-2">
+          <input id="url" name="url" type="text" required class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
+        </div>
+      </div>
+
+      <div>
+        <label for="logo" class="block text-sm font-medium leading-6 text-gray-900">Company Logo</label>
+        <div class="mt-2">
+          <input id="logo" name="logo" type="file" required class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
+        </div>
+      </div>
+
+      <div>
+            <label for="category" class="block mb-2 text-sm font-medium leading-6 text-gray-900">Category</label>
+            <select class="js-example-basic-multiple js-example-responsive js-states form-control "
+                name="category" multiple="multiple" id="category" style="width: 100%;" required>
+                <option value="social media">Social Media</option>
+                <option value="business">Business</option>
+                <option value="coporate">Coporate</option>
+            </select>
+        </div>
+
+      <div>
+            <label for="stage" class="block mb-2 text-sm font-medium leading-6 text-gray-900">Stage</label>
+            <select class="js-example-basic-multiple-2 js-example-responsive js-states form-control "
+                name="stage" multiple="multiple" id="stage" style="width: 100%;" required>
+                <option value="startup">Startup</option>
+                <option value="fortune 500">Fortune 500</option>
+            </select>
+        </div>
+
+        <div>
+            <label for="address" class="block text-sm font-medium leading-6 text-gray-900">Address</label>
+            <div class="mt-2">
+            <input id="address" name="address" type="text" required class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
+            </div>
+        </div>
+
+        <div>
+            <label for="city" class="block text-sm font-medium leading-6 text-gray-900">City</label>
+            <div class="mt-2">
+            <input id="city" name="city" type="text" required class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
+            </div>
+        </div>
+
+        <div>
+            <label for="state" class="block text-sm font-medium leading-6 text-gray-900">State</label>
+            <div class="mt-2">
+            <input id="state" name="state" type="text" required class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
+            </div>
+        </div>
+
+        <div>
+            <label for="zip" class="block text-sm font-medium leading-6 text-gray-900">Zip Code</label>
+            <div class="mt-2">
+            <input id="zip" name="zip" type="text" required class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
+            </div>
+        </div>
+
+        <div>
+            <label for="country" class="block text-sm font-medium leading-6 text-gray-900">Country</label>
+            <div class="mt-2">
+            <input id="country" name="country" type="text" required class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
+            </div>
+        </div>
+
+        <div>
+            <label for="phone" class="block text-sm font-medium leading-6 text-gray-900">Phone Number</label>
+            <div class="mt-2">
+            <input id="phone" name="phone" type="text" required class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
+            </div>
+        </div>
+
+      <div>
+        <button type="submit" class="flex w-full justify-center rounded-md bg-indigo-600 px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">Create Company</button>
+      </div>
+    </form>
+  </div>
+</div>
+<script>
+    $(document).ready(function() {
+        $('.js-example-basic-multiple').select2();
+        $("#category").select2({
+            tags: "true",
+            placeholder: "Select your Category",
+            allowClear: true,
+            theme: "classic",
+            width: 'resolve'
+        });
+
+        $('.js-example-basic-multiple-2').select2();
+        $("#stage").select2({
+            tags: "true",
+            placeholder: "Select your Stage",
+            allowClear: true,
+            theme: "classic",
+            width: 'resolve'
+        });
+    });
+</script>
+{% endblock %}

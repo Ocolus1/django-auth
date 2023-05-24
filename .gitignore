@@ -112,3 +112,6 @@ GitHub.sublime-settings
 
 # Database
 *.sqlite3
+
+accounts/migrations/
+logos/*

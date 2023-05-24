@@ -3,9 +3,9 @@
 {% block title %}Django Authentication{% endblock title %}
 
 {% block content %}
-    <h1>Homepage</h1>
+    <h1 class="border border-blue-500 hover:cursor-pointer">Homepage</h1>
     {% if user.is_authenticated %}
         <h2>Hello {{ user.email }}</h2>
-        <h3>Boilerplate to Setup Authentication using Django-allauth 🚀</h3>
+        <h3>Boilerplate to Setup Django and tailwind</h3>
     {% endif %}
 {% endblock content %}

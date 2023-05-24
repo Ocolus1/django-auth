@@ -5,7 +5,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 DEBUG = config("DEBUG", default=True)
 SECRET_KEY = config("SECRET_KEY", default="secret")
-ALLOWED_HOSTS = config("ALLOWED_HOSTS", default="*")
+ALLOWED_HOSTS = config("ALLOWED_HOSTS", default="").split(",")
 
 INSTALLED_APPS = [
     "django.contrib.admin",
@@ -15,14 +15,18 @@ INSTALLED_APPS = [
     "django.contrib.messages",
     "django.contrib.staticfiles",
     "django.contrib.sites",
+    "tailwind",
+    "theme",
+    "django_browser_reload",
     "allauth",
     "allauth.account",
     "allauth.socialaccount",
     "django_extensions",
     "crispy_forms",
+    "crispy_bootstrap5",
     "debug_toolbar",
     "pages.apps.PagesConfig",
-    "accounts.apps.AccountsConfig",
+    "accounts",
 ]
 
 MIDDLEWARE = [
@@ -34,6 +38,7 @@ MIDDLEWARE = [
     "django.contrib.auth.middleware.AuthenticationMiddleware",
     "django.contrib.messages.middleware.MessageMiddleware",
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
+    "django_browser_reload.middleware.BrowserReloadMiddleware",
 ]
 
 ROOT_URLCONF = "config.urls"
@@ -59,7 +64,7 @@ SHELL_PLUS = "ipython"
 INTERNAL_IPS = [
     "127.0.0.1",
 ]
-CRISPY_TEMPLATE_PACK = "bootstrap4"
+
 
 if DEBUG:
     DATABASES = {
@@ -136,6 +141,7 @@ ACCOUNT_EMAIL_VERIFICATION = config("ACCOUNT_EMAIL_VERIFICATION", default="none"
 ACCOUNT_AUTHENTICATION_METHOD = "email"
 ACCOUNT_UNIQUE_EMAIL = True
 LOGIN_REDIRECT_URL = "pages:index"
+LOGIN_URL= "accounts:login_view"
 
 EMAIL_BACKEND = config(
     "EMAIL_BACKEND",
@@ -155,3 +161,9 @@ if not DEBUG:
     SECURE_HSTS_PRELOAD = True
     SESSION_COOKIE_SECURE = True
     CSRF_COOKIE_SECURE = True
+
+TAILWIND_APP_NAME = 'theme'
+
+NPM_BIN_PATH = "C:/Program Files/nodejs/npm.cmd"
+CRISPY_ALLOWED_TEMPLATE_PACKS = "bootstrap5"
+CRISPY_TEMPLATE_PACK = "bootstrap5"
