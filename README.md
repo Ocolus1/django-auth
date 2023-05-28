@@ -1,6 +1,6 @@
-# Django-Authentication [![Testing](https://github.com/yezz123/Django-Authentication/actions/workflows/pytest.yml/badge.svg?branch=main)](https://github.com/yezz123/Django-Authentication/actions/workflows/pytest.yml)
+# Django-Authentication
 
-A simple Boilerplate to Setup Authentication using Django-allauth, with a custom template for login and registration using `django-crispy-forms`.
+A simple Boilerplate to Setup Authentication using Django-allauth and tailwind, with a custom template for login and registration.
 
 ## Getting Started
 
@@ -12,10 +12,10 @@ A simple Boilerplate to Setup Authentication using Django-allauth, with a custom
 
 ```sh
 # clone the repo
-$ git clone https://github.com/yezz123/Django-Authentication
+$ git clone https://github.com/Ocolus1/django-auth.git
 
 # move to the project folder
-$ cd Django-Authentication
+$ cd django-auth
 ```
 
 ### Creating virtual environment
@@ -54,7 +54,20 @@ EMAIL_USE_TLS = # if your email use tls
 EMAIL_PORT = #email port
 ```
 
-> change all the environment variables in the `.env.sample` and don't forget to rename it to `.env`.
+> change all the environment variables in the `.env.template` and don't forget to rename it to `.env`.
+
+
+## Project Structure
+The Django project is organized into the following main directories:
+
+`config`: This directory contains the main project settings and entry points. It includes the settings.py file and the root URL configuration.
+
+`accounts`: This directory contains authentication models, including a custom user model and email-based account flow. It also contains the account URL configuration, form styles and company models.
+
+`pages`: This directory is where the main user-facing elements of the web app should go.
+
+`theme`: This directory is where the main tailwind configurations of the web app should go.
+
 
 ### Run the project
 
@@ -72,6 +85,12 @@ help:
  @echo "    make test" #run the tests using Pytest
 ```
 
+`pymake install`
+`pymake makemigrations`
+`pymake migrations`
+`pymake run_server`
+
+
 ## Preconfigured Packages
 
 Includes preconfigured packages to kick start Django-Authentication by just setting appropriate configuration.
@@ -81,10 +100,6 @@ Includes preconfigured packages to kick start Django-Authentication by just sett
 | [django-allauth](https://django-allauth.readthedocs.io/en/latest/)        | Integrated set of Django applications addressing authentication, registration, account management as well as 3rd party (social) account authentication.           |
 | [django-crispy-forms](https://django-crispy-forms.readthedocs.io/en/latest/) | django-crispy-forms provides you with a `crispy` filter and `{% crispy %}` tag that will let you control the rendering behavior of your Django forms in a very elegant and DRY way.     |
 
-## Contributing
-
-- Django-Authentication is a simple project, so you can contribute to it by just adding your code to the project to improve it.
-- If you have any questions, please feel free to open an issue or create a pull request.
 
 ## License
 
