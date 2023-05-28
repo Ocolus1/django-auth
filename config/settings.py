@@ -65,8 +65,7 @@ INTERNAL_IPS = [
     "127.0.0.1",
 ]
 
-
-if DEBUG:
+if DEBUG is True:
     DATABASES = {
         "default": {
             "ENGINE": "django.db.backends.sqlite3",

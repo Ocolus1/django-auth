@@ -14,19 +14,19 @@ install:
 
 migrations:
 	@echo "Running migrations..."
-	python3 manage.py makemigrations
+	python manage.py makemigrations
 
 migrate:
 	@echo "Migrating..."
-	python3 manage.py migrate
+	python manage.py migrate
 
 createsuperuser:
 	@echo "Creating user..."
-	python3 manage.py createsuperuser
+	python manage.py createsuperuser
 
 run_server:
 	@echo "Running server..."
-	python3 manage.py runserver
+	python manage.py runserver
 
 lint:
 	@echo "Linting..."

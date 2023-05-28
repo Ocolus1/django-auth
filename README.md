@@ -85,11 +85,16 @@ help:
  @echo "    make test" #run the tests using Pytest
 ```
 
-`pymake install`
-`pymake makemigrations`
-`pymake migrations`
-`pymake run_server`
+`pip install -r requirements.txt`
+`python manage.py makemigrations`
+`python manage.py migrate`
+`python manage.py tailwind start`
+`python manage.py runserver`
 
+
+### For Production Build
+
+`python manage.py tailwind build`
 
 ## Preconfigured Packages
 
