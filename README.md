@@ -85,8 +85,8 @@ help:
  @echo "    make test" #run the tests using Pytest
 ```
 
-`pip install -r requirements.txt`
-`python manage.py makemigrations`
+`pip install -r requirements.txt`\
+`python manage.py makemigrations`\
 `python manage.py migrate`
 
 
@@ -105,13 +105,42 @@ On Windows it might look like this:
 Please note that the path to the npm executable may be different for your system. To get the npm path, try running the command `which npm` in your terminal.
 
 Then run 
-`python manage.py tailwind start`
+
+`python manage.py tailwind start`\
 `python manage.py runserver`
 
 
-### For Production Build
+## For Production Build
 
-`python manage.py tailwind build`
+`python manage.py tailwind build` \
+`python manage.py collectstatic`
+
+## Deploy to Digital Ocean
+Here are the general steps to deploy a Django app to Digital Ocean. Detailed instructions are outside the scope of this README and can be found in the official Digital Ocean documentation and Django deployment guides.
+
+1. Create a new droplet on Digital Ocean. Choose an image that includes Django or set up the necessary environment yourself.
+
+2. Upload your Django project to the droplet. You can do this using a variety of methods, such as Git, SCP, or FTP.
+
+3. Set up the database. Django supports several databases. The choice will depend on your needs and the resources available on your droplet.
+
+4. Configure the Django project for production. This will include tasks such as setting DEBUG = False in your settings file, configuring your ALLOWED_HOSTS, and setting up static and media files to be served properly.
+
+5. Set up a web server. Common choices for Django projects are Gunicorn or uWSGI.
+
+6. Set up a reverse proxy. This is typically Nginx or Apache, which will handle static files and pass other requests to the Django app.
+
+7. Start your Django app. This usually involves running the web server configured in step 5.
+
+8. Visit your droplet's IP address in a web browser to confirm everything is working.
+
+
+### You can follow this tutorial to successfully deploy it 
+[Youtube tutorial](https://www.youtube.com/watch?v=W_nqdc6IMDw)
+
+[Written tutorial](https://www.codewithmuh.com/blog/deploy-django-project-on-digital-ocean-vps-droplet)
+
+[Digital Ocean turorial](https://www.digitalocean.com/community/tutorials/how-to-set-up-django-with-postgres-nginx-and-gunicorn-on-ubuntu-16-04) - This will help you in setting up the postgres database.
 
 ## Preconfigured Packages
 
