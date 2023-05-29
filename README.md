@@ -88,6 +88,23 @@ help:
 `pip install -r requirements.txt`
 `python manage.py makemigrations`
 `python manage.py migrate`
+
+
+## Configuration of the path to the npm executable
+Tailwind CSS requires Node.js to be installed on your machine. Node.js is a JavaScript runtime that allows you to run JavaScript code outside the browser. Most (if not all) of the current frontend tools depend on Node.js.
+
+If you don’t have Node.js installed on your machine, please follow installation instructions from the official Node.js page.
+
+Sometimes (especially on Windows), the Python executable cannot find the npm binary installed on your system. In this case, you need to set the path to the npm executable in settings.py file manually (Linux/Mac):
+
+`NPM_BIN_PATH = '/usr/local/bin/npm'`
+
+On Windows it might look like this:
+
+`NPM_BIN_PATH = r"C:\Program Files\nodejs\npm.cmd"`
+Please note that the path to the npm executable may be different for your system. To get the npm path, try running the command `which npm` in your terminal.
+
+Then run 
 `python manage.py tailwind start`
 `python manage.py runserver`
 
