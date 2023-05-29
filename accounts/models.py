@@ -37,7 +37,7 @@ class CustomUserManager(BaseUserManager):
 
 class CustomUser(AbstractUser):
     username = None
-    name = models.CharField(max_length=255)
+    name = models.CharField(max_length=255, default="John")
     email = models.EmailField(_('email address'), unique=True)
     linked_companies = models.ManyToManyField("Company", through="UserCompanyRelation")
 
