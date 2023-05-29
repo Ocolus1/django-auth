@@ -7,7 +7,7 @@ pytestmark = pytest.mark.django_db
 
 class TestUser:
     def test_create_user(self, user):
-        assert len(user.username) > 0
+        assert len(user.name) > 0
         assert len(user.email) > 0
         assert user.is_staff is False
         assert user.is_active
@@ -17,7 +17,7 @@ class TestUser:
 
     def test_create_superuser(self, admin_user):
 
-        assert len(admin_user.username) > 0
+        assert len(admin_user.name) > 0
         assert len(admin_user.email) > 0
         assert admin_user.is_staff
         assert admin_user.is_superuser
